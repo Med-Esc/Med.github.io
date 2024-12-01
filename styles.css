@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4c2c2;
+    margin: 0;
+    font-family: 'Indie Flower', cursive;
+}
+
+
+
+
+.container {
+    text-align: center;
+}
+
+.envelope {
+    width: 400px;
+    height: 250px;
+    background-color: #fff;
+    border: 2px solid #000;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.5s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px; /* Add margin for better spacing */
+}
+
+.flap {
+    width: 100%;
+    height: 50%;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top;
+    animation: flapClose 0.5s forwards;
+}
+
+.letter {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 1s forwards;
+    z-index: 1;
+}
+
+.envelope.open .flap {
+    animation: flapOpen 0.5s forwards;
+}
+
+.envelope.open .letter {
+    display: block;
+}
+
+/* Keyframes for the animations */
+@keyframes flapOpen {
+    from {
+        transform: rotateX(0);
+    }
+    to {
+        transform: rotateX(180deg);
+    }
+}
+
+@keyframes flapClose {
+    from {
+        transform: rotateX(180deg);
+    }
+    to {
+        transform: rotateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.text {
+    font-size: 24px;
+    color: #000;
+    opacity: 0;
+    transition: opacity 0.5s;
+    font-family: 'Indie Flower', cursive  ;
+}
+
+.celebration {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #f4c2c2; /* Match the site's background color */
+    padding: 20px; /* Optional: add padding for better spacing */
+    border-radius: 10px; /* Optional: add rounded corners */
+}
+
+.celebration img {
+    max-width: 100%;
+    height: auto;
+}
+
+.celebration p {
+    font-size: 18px;
+    font-family: 'Indie Flower', cursive;
+    color: #000;
+    margin-top: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Indie Flower', cursive;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.yes {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.no {
+    background-color: #F44336;
+    color: white;
+    position: relative; /* Ensure position changes work for no button */
+}
+
+#no:hover {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    animation: move 0.5s;
+}
+
+
+@keyframes move {
+    from { top: 10%; left: 10%; }
+    to { top: 50%; left: 50%; }
+}
+.turtle {
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+    animation: slideInFromRight 3s forwards; /* Animation to slide in from the right */
+}
+
+.turtle img {
+    width: 100px;
+    height: auto;
+}
+
+.speech-bubble {
+    position: relative;
+    bottom: 210px; /* Adjust this value to place the bubble above the turtle */
+    left: 30%;
+    transform: translateX(-50%);
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    opacity: 0; /* Start invisible */
+    animation: fadeInBubble 1s forwards 3s; /* Delayed animation to match the turtle */
+}
+.speech-bubble p {
+    font-family: Arial, sans-serif; /* Change the font family for a normal look */
+    font-weight: normal; /* Ensure the font weight is normal */
+}
+
+
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    top: 100%; /* Adjust this value based on the size of the bubble */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom: 20px solid #fff;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+
+
+
+/* Keyframes for the animations */
+@keyframes slideInFromRight {
+    from {
+        left: 400%;
+    }
+    to {
+        left: 300%;
+    }
+}
+
+@keyframes fadeInBubble {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

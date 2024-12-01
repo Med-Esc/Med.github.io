@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Got Mail</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="envelope" id="envelope">
+            <div class="flap"></div>
+            <div class="letter" id="letter">
+                <p>Hey beautiful mommy,<br> i want you to know that you are the most creature in the planet <br>and you are so  lovely with ur smile and your nose <br>and i want you to be the person that i wanna  die with<br>would you ?</p>
+                <div class="buttons">
+                    <button class="btn yes" id="yes">Yes</button>
+                    <button class="btn no" id="no">No</button>
+                </div>
+            </div>
+        </div>
+        <div class="celebration" id="celebration" style="display: none;">
+            <img src="/images/yay-bear.gif" width="300" alt="Yay! See you this weekend! Muah muah!">
+            <p>Yay! See you this weekend! Muah muah!</p>
+            <div class="turtle" id="turtle" style="display: none;">
+                <img src="/images/turtle.png" width="100" alt="Turtle">
+                <div class="speech-bubble">
+                    <p>it took a lot of time</p>
+                    <p>we should meet🙂</p>
+                </div>
+            </div>
+        </div>
+        <audio id="turtleSound" src="/sound/turtle-sound.mp3"></audio> <!-- Add this line -->
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
